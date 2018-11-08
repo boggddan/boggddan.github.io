@@ -16,8 +16,10 @@ if (!Object.getOwnPropertyDescriptor(Element.prototype, 'classList') && HTMLElem
   classList && Object.defineProperty(Element.prototype, 'classList', classList);
 }
 
+//
+
 window.addEventListener('load', function (event) {
-  console.log("All resources finished loading!");var container = document.createElement("div");
+  console.log('All resources finished loading!');
 
   var cards = document.querySelectorAll('.memory-card');
 
@@ -34,7 +36,6 @@ window.addEventListener('load', function (event) {
     if (!firstCard) {
       firstCard = elem;
     } else {
-
       secondCard = elem;
 
       if (firstCard.dataset.value === secondCard.dataset.value) {

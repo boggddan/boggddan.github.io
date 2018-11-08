@@ -46,7 +46,7 @@ if (!Object.getOwnPropertyDescriptor(Element.prototype, 'classList') && HTMLElem
 
 (function () {
   // В IE 11 fiter значение не применяется, но само свойство присуствует
-  var checkPropertyFilter = function () {
+  var isSupport = function () {
     var testImg = new Image();
     testImg.style.filter = 'grayscale(100%)';
     return !testImg.style.filter;
@@ -167,8 +167,6 @@ if (!Object.getOwnPropertyDescriptor(Element.prototype, 'classList') && HTMLElem
     }
   };
 
-  if (checkPropertyFilter) {
-    window.addEventListener('load', applyFilter);
-  }
+  if (isSupport) window.addEventListener('load', applyFilter);
 })();
 //# sourceMappingURL=grayscale-polyfill.js.map
