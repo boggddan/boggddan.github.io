@@ -137,7 +137,6 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     }
   };
 
-  // if (isNotSupport)
-  window.addEventListener('load', applyFilter);
+  if (isNotSupport) window.addEventListener('load', applyFilter);
 })();
 //# sourceMappingURL=multiply-background-blend-mode-polyfill.js.map
