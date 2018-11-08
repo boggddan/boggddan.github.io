@@ -129,6 +129,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
               running = true;
             };
 
+            requestTick();
             window.addEventListener('resize', requestTick);
           }
         }
