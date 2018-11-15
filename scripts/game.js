@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // for IE 11
 if (window.NodeList && !NodeList.prototype.forEach) {
@@ -14,23 +14,18 @@ if (!('remove' in Element.prototype)) {
 if (!Object.getOwnPropertyDescriptor(Element.prototype, 'classList') && HTMLElement) {
   var classList = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'classList');
   classList && Object.defineProperty(Element.prototype, 'classList', classList);
-}
+} //
 
-//
 
 window.addEventListener('load', function (event) {
   console.log('All resources finished loading!');
-
   var cards = document.querySelectorAll('.memory-card');
-
   var firstCard = null,
       secondCard = null;
 
   var cardClick = function cardClick(event) {
     var elem = event.target;
-
     if (elem === firstCard || secondCard) return;
-
     elem.classList.add('flip');
 
     if (!firstCard) {
